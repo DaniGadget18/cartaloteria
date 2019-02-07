@@ -6,11 +6,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     ImageButton carta1,carta2,carta3,carta4,carta5,carta6,carta7,carta8,carta9,carta10,carta11,carta12;
-    int num1=0, num2=0, num3=0, num4=0, num5=0, num6=0, num7=0, num8=0, num9=0, num10=0, num11=0, num12=0;
+    int num1=0, num2=0, num3=0, num4=0, num5=0, num6=0, num7=0, num8=0, num9=0, num10=0, num11=0, num12=0, ganador=1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,10 +52,12 @@ public class MainActivity extends AppCompatActivity {
                 if (num2==0){
                     carta2.setImageResource(R.drawable.build);
                     num2=1;
+                    ganador++;
                 }
                 else{
                     carta2.setImageResource(R.drawable.arbol);
                     num2=0;
+                    ganador--;
                 }
             }
         });
@@ -65,10 +68,12 @@ public class MainActivity extends AppCompatActivity {
                 if (num3==0){
                     carta3.setImageResource(R.drawable.build);
                     num3=1;
+                    ganador++;
                 }
                 else{
                     carta3.setImageResource(R.drawable.luna);
                     num3=0;
+                    ganador--;
                 }
             }
         });
@@ -79,10 +84,12 @@ public class MainActivity extends AppCompatActivity {
                 if (num4==0){
                     carta4.setImageResource(R.drawable.build);
                     num4=1;
+                    ganador++;
                 }
                 else{
                     carta4.setImageResource(R.drawable.arana);
                     num4=0;
+                    ganador--;
                 }
             }
         });
@@ -92,10 +99,12 @@ public class MainActivity extends AppCompatActivity {
                 if (num5==0){
                     carta5.setImageResource(R.drawable.build);
                     num5=1;
+                    ganador++;
                 }
                 else{
                     carta5.setImageResource(R.drawable.arpa);
                     num5=0;
+                    ganador--;
                 }
             }
         });
@@ -105,10 +114,12 @@ public class MainActivity extends AppCompatActivity {
                 if (num6==0){
                     carta6.setImageResource(R.drawable.build);
                     num6=1;
+                    ganador++;
                 }
                 else{
                     carta6.setImageResource(R.drawable.maceta);
                     num6=0;
+                    ganador--;
                 }
             }
         });
@@ -118,10 +129,12 @@ public class MainActivity extends AppCompatActivity {
                 if (num7==0){
                     carta7.setImageResource(R.drawable.build);
                     num7=1;
+                    ganador++;
                 }
                 else{
                     carta7.setImageResource(R.drawable.bandera);
                     num7=0;
+                    ganador--;
                 }
             }
         });
@@ -131,10 +144,12 @@ public class MainActivity extends AppCompatActivity {
                 if (num8==0){
                     carta8.setImageResource(R.drawable.build);
                     num8=1;
+                    ganador++;
                 }
                 else{
                     carta8.setImageResource(R.drawable.jaras);
                     num8=0;
+                    ganador--;
                 }
             }
         });
@@ -144,10 +159,12 @@ public class MainActivity extends AppCompatActivity {
                 if (num9==0){
                     carta9.setImageResource(R.drawable.build);
                     num9=1;
+                    ganador++;
                 }
                 else{
                     carta9.setImageResource(R.drawable.camaron);
                     num9=0;
+                    ganador--;
                 }
             }
         });
@@ -157,10 +174,12 @@ public class MainActivity extends AppCompatActivity {
                 if (num10==0){
                     carta10.setImageResource(R.drawable.build);
                     num10=1;
+                    ganador++;
                 }
                 else{
                     carta10.setImageResource(R.drawable.escalera);
                     num10=0;
+                    ganador--;
                 }
             }
         });
@@ -170,10 +189,12 @@ public class MainActivity extends AppCompatActivity {
                 if (num11==0){
                     carta11.setImageResource(R.drawable.build);
                     num11=1;
+                    ganador++;
                 }
                 else{
                     carta11.setImageResource(R.drawable.mano);
                     num11=0;
+                    ganador--;
                 }
             }
         });
@@ -183,14 +204,22 @@ public class MainActivity extends AppCompatActivity {
                 if (num12==0){
                     carta12.setImageResource(R.drawable.build);
                     num12=1;
+                    ganador++;
 
                 }
                 else{
                     carta12.setImageResource(R.drawable.garza);
                     num12=0;
+                    ganador--;
                 }
             }
         });
+
+        if (ganador==12)
+        {
+            Toast.makeText(this, "¡ GANASTE !", Toast.LENGTH_SHORT).show();
+        }
+
         }
 
     public void reiniciar(View view) {
@@ -206,5 +235,6 @@ public class MainActivity extends AppCompatActivity {
         carta10.setImageResource(R.drawable.escalera);
         carta11.setImageResource(R.drawable.mano);
         carta12.setImageResource(R.drawable.garza);
+        ganador=0;
     }
 }
